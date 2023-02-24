@@ -2,4 +2,4 @@
 ### Ahmad Hadidi
 # Daniel Wang
 # Michael Tao
-# Rishi Natarajan
+###### Rishi Natarajan
