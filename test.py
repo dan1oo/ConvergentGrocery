@@ -2,7 +2,6 @@
 
 import openfoodfacts
 
-
 class UserScore:
 
 
@@ -26,9 +25,32 @@ class UserScore:
     
 
     # for x in product2['product']:
+    #     print(x)
     #     pass
     # print(product2['product']['ecoscore_score'])
     # print(product2['product']['ecoscore_grade'])
+    def getProductName(self, barcode):
+        product = openfoodfacts.products.get_product(barcode)
+        if not product:
+            print(f"Invalid barcode: {barcode}")
+            return
+        productName = product['product']['product_name']
+        return productName
+    def getBrand(self, barcode):
+            product = openfoodfacts.products.get_product(barcode)
+            if not product:
+                print(f"Invalid barcode: {barcode}")
+                return
+            brand = product['product']['brands']
+            return brand
+    def getScore(self, barcode):
+        product = openfoodfacts.products.get_product(barcode)
+        if not product:
+            print(f"Invalid barcode: {barcode}")
+            return
+        productScore = product['product']['ecoscore_score']
+        return productScore
+    
     def addProduct(self, barcode):
         product = openfoodfacts.products.get_product(barcode)
         if not product:
@@ -39,7 +61,8 @@ class UserScore:
         if self.currProducts.get(barcode) > 1:
             self.currProducts[barcode] += 1
         self.size += 1
-        self.currScore += (productScore / self.size)
+        self.currScore += productScore
+        self.currScore /= self.size
 
     def getCurrScore(self):
         return self.currScore
@@ -71,9 +94,13 @@ class Runner:
         michael = UserScore("Michael")
         michael.addProduct('0742365264450')
         michael.printInfo()
-        michael.reset()
+        # michael.reset()
+        # michael.printInfo()
+        print(michael.getProductName('0742365264450'))
+        michael.addProduct('0818290017031')
         michael.printInfo()
-
+        print(michael.getBrand('0742365264450'))
+        print(michael.getScore('0818290017031'))
 
 if __name__ == '__main__':
     Runner.main()
