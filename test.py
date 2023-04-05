@@ -57,15 +57,20 @@ class UserScore:
             print(f"Invalid barcode: {barcode}")
             return
         productScore = product['product']['ecoscore_score']
-        self.currProducts.setdefault(barcode, 1)
-        if self.currProducts.get(barcode) > 1:
-            self.currProducts[barcode] += 1
+        if not self.currProducts.__contains__(barcode):
+            self.currProducts.setdefault(barcode, 1)
+            
+        else:
+            self.currProducts[barcode] = self.currProducts.get(barcode) + 1
         self.size += 1
         self.currScore += productScore
         self.currScore /= self.size
 
     def getCurrScore(self):
         return self.currScore
+    
+    def getScoreWeight(self, barcode):
+        return self.getScore(barcode) / self.size
 
     def getSize(self):
         return self.size
@@ -80,7 +85,23 @@ class UserScore:
 
     def getName(self):
         return self.name
+    
+    def getNutriScore(self, barcode):
+        product = openfoodfacts.products.get_product(barcode)
+        if not product:
+            print(f"Invalid barcode: {barcode}")
+            return
+        productScore = product['product']['nutriscore_score']
+        return productScore
 
+    def getEcoScoreData(self, barcode):
+        product = openfoodfacts.products.get_product(barcode)
+        if not product:
+            print(f"Invalid barcode: {barcode}")
+            return
+        productScore = product['product']['ecoscore_data']
+        return productScore
+    
     def printInfo(self):
         print(self.currScore)
         print(self.currProducts)
@@ -99,8 +120,13 @@ class Runner:
         print(michael.getProductName('0742365264450'))
         michael.addProduct('0818290017031')
         michael.printInfo()
-        print(michael.getBrand('0742365264450'))
-        print(michael.getScore('0818290017031'))
+        # print(michael.getBrand('0742365264450'))
+        # print(michael.getScore('0818290017031'))
+        # print(michael.getScoreWeight('0742365264450'))
+        # print(michael.getNutriScore('0742365264450'))
+        # print(michael.getEcoScoreData('0742365264450'))
+        michael.addProduct('0742365264450')
+        michael.printInfo()
 
 if __name__ == '__main__':
     Runner.main()
