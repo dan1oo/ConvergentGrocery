@@ -1,6 +1,8 @@
 
 
 import openfoodfacts
+import openai
+openai.api_key = "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"
 
 class UserScore:
 
@@ -29,6 +31,12 @@ class UserScore:
     #     pass
     # print(product2['product']['ecoscore_score'])
     # print(product2['product']['ecoscore_grade'])
+    
+    def generate_text(prompt):
+        response = openai.Completion.create(
+         engine="davinci", prompt=prompt, max_tokens=1024, n=1,stop=None, temperature=0.5)
+         return response.choices[0].text.strip()
+   
     def getProductName(self, barcode):
         product = openfoodfacts.products.get_product(barcode)
         if not product:
@@ -126,7 +134,9 @@ class Runner:
         # print(michael.getNutriScore('0742365264450'))
         # print(michael.getEcoScoreData('0742365264450'))
         michael.addProduct('0742365264450')
+        result = generate_text("how sustainable is " + michael.getProductName('0742365264450'))
         michael.printInfo()
+        print(result)
 
 if __name__ == '__main__':
     Runner.main()
