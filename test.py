@@ -2,9 +2,9 @@
 
 import openfoodfacts
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
-class UserScore:
+class TripScore:
 
 
     milk = '0742365264450'
@@ -32,10 +32,12 @@ class UserScore:
     # print(product2['product']['ecoscore_score'])
     # print(product2['product']['ecoscore_grade'])
     
-    def generate_text(prompt):
+    def generate_text(self, prompt):
         response = openai.Completion.create(
-         engine="davinci", prompt=prompt, max_tokens=1024, n=1,stop=None, temperature=0.5)
-         return response.choices[0].text.strip()
+        engine="davinci", prompt=prompt, max_tokens=1024, n=1,stop=None, temperature=0.5)
+        for x in response.choices:
+            print(x)
+        return response.choices[0].text.strip()
    
     def getProductName(self, barcode):
         product = openfoodfacts.products.get_product(barcode)
@@ -65,11 +67,10 @@ class UserScore:
             print(f"Invalid barcode: {barcode}")
             return
         productScore = product['product']['ecoscore_score']
-        if not self.currProducts.__contains__(barcode):
-            self.currProducts.setdefault(barcode, 1)
-            
+        if not self.currProducts.__contains__(self.getProductName(barcode)):
+            self.currProducts.setdefault(self.getProductName(barcode), 1)
         else:
-            self.currProducts[barcode] = self.currProducts.get(barcode) + 1
+            self.currProducts[self.getProductName(barcode)] += 1
         self.size += 1
         self.currScore += productScore
         self.currScore /= self.size
@@ -110,17 +111,47 @@ class UserScore:
         productScore = product['product']['ecoscore_data']
         return productScore
     
+    def getDiscount(self):
+        if (self.currScore >= 50 and self.currScore < 80):
+            return 5
+        elif (self.currScore >= 80):
+            return 10
+        else:
+            return 0
+    
     def printInfo(self):
         print(self.currScore)
         print(self.currProducts)
         print(self.size)
+        print(self.getDiscount())
 
+class User:
 
+    def __init__(self, name):
+        self.name = name
+        self.cumulativeScore = 0
+        self.rewardPoints = 0
+        self.numTrips = 0
+        self.pastTrips = dict()
+
+    def getCumulativeScore(self):
+        return self.cumulativeScore
+    
+    def addTrip(self, trip = TripScore):
+        self.cumulativeScore += trip.getCurrScore()
+        self.numTrips += 1
+        self.cumulativeScore /= self.numTrips
+        self.pastTrips.setdefault(trip.getCurrScore(), trip.getCurrProducts())
+
+    def printInfo(self):
+        print(self.cumulativeScore)
+        print(self.pastTrips)
+        print(self.numTrips)
 class Runner:
 
     @staticmethod
     def main():
-        michael = UserScore("Michael")
+        michael = TripScore("Michael")
         michael.addProduct('0742365264450')
         michael.printInfo()
         # michael.reset()
@@ -134,9 +165,15 @@ class Runner:
         # print(michael.getNutriScore('0742365264450'))
         # print(michael.getEcoScoreData('0742365264450'))
         michael.addProduct('0742365264450')
-        result = generate_text("how sustainable is " + michael.getProductName('0742365264450'))
+        #result = michael.generate_text("how sustainable is " + michael.getProductName('0742365264450'))
         michael.printInfo()
-        print(result)
+        #print(result)
+
+        michaelTrips = User("Michael")
+        michaelTrips.addTrip(michael)
+        michaelTrips.printInfo()
+
+
 
 if __name__ == '__main__':
     Runner.main()
