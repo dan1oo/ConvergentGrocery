@@ -31,11 +31,14 @@ const Profile = () => {
           source={require("../assets/barcode-scanner.png")}
         />
         </Pressable>
-        <Image
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("TripReport")}>
+          <Image
           style={[styles.shoppingCartIcon, styles.iconLayout]}
           resizeMode="cover"
           source={require("../assets/article.png")}
-        />
+          />
+        </Pressable>
         <Pressable 
           style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("Rewards")}>
           <Image
