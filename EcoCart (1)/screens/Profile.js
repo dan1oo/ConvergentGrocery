@@ -15,11 +15,22 @@ const Profile = () => {
           resizeMode="cover"
           source={require("../assets/location-on1.png")}
         />
-        <Image
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("CartList")}>
+          <Image
+            style={[styles.shoppingCartIcon, styles.iconLayout]}
+            resizeMode="cover"
+            source={require("../assets/shopping-cart.png")}
+          />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScannerAlternate")}>
+          <Image
           style={[styles.shoppingCartIcon, styles.iconLayout]}
           resizeMode="cover"
           source={require("../assets/barcode-scanner.png")}
         />
+        </Pressable>
         <Image
           style={[styles.shoppingCartIcon, styles.iconLayout]}
           resizeMode="cover"
@@ -32,7 +43,6 @@ const Profile = () => {
             resizeMode="cover"
             source={require("../assets/auto-awesome.png")}
           />
-          
         </Pressable>
       </View>
       <EcoCartContainer
