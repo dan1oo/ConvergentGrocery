@@ -17,7 +17,7 @@ const BarcodeScanner3 = () => {
       <Image
         style={styles.backgroundPictureIcon1}
         resizeMode="cover"
-        source={require("../assets/backgroundpicture11.png")}
+        source={require("../assets/backgroundpicture1.png")}
       />
       <View style={[styles.popUp, styles.popUpPosition]} />
       <View style={styles.barcodeScanner3Child} />

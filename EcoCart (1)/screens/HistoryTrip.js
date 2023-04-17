@@ -63,7 +63,7 @@ const HistoryTrip = () => {
           <Image
             style={styles.wheatsvilleIcon}
             resizeMode="cover"
-            source={require("../assets/wheatsville31.png")}
+            source={require("../assets/wheatsville3.png")}
           />
           <Image
             style={styles.wheatsvilleIcon}

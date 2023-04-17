@@ -62,7 +62,7 @@ const Rewards1 = () => {
           <Image
             style={[styles.wheatsvilleIcon, styles.hebIconLayout1]}
             resizeMode="cover"
-            source={require("../assets/wheatsville31.png")}
+            source={require("../assets/wheatsville3.png")}
           />
           <Image
             style={[styles.wheatsvilleIcon, styles.hebIconLayout1]}

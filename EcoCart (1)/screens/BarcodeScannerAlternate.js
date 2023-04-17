@@ -18,7 +18,7 @@ const BarcodeScannerAlternate = () => {
       <Image
         style={styles.backgroundPictureIcon1}
         resizeMode="cover"
-        source={require("../assets/backgroundpicture11.png")}
+        source={require("../assets/backgroundpicture1.png")}
       />
       <EcoCartContainer
         productIds={require("../assets/ecocart-icon2.png")}

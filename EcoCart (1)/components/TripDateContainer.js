@@ -37,12 +37,12 @@ const TripDateContainer = () => {
               <Image
                 style={[styles.whiteCircleIcon, styles.textPosition]}
                 resizeMode="cover"
-                source={require("../assets/whitecircle11.png")}
+                source={require("../assets/whitecircle1.png")}
               />
               <Image
                 style={styles.meterIcon}
                 resizeMode="cover"
-                source={require("../assets/meter11.png")}
+                source={require("../assets/meter1.png")}
               />
               <View style={[styles.score, styles.textLayout]}>
                 <Text style={[styles.text, styles.textTypo]}>8</Text>
