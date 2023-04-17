@@ -2,6 +2,7 @@
 
 import openfoodfacts
 import openai
+import serial
 openai.api_key = "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"
 
 class TripScore:
@@ -125,6 +126,21 @@ class TripScore:
         print(self.size)
         print(self.getDiscount())
 
+
+# def readserial(comport, baudrate):
+#     ser = serial.Serial(comport, baudrate, timeout=0.1)         # 1/timeout is the frequency at which the port is read
+#     while True:
+#         data = ser.readline().decode().strip()
+#         if data:
+#             return data
+
+
+# if __name__ == '__main__':
+
+#     while True:
+
+#         print(readserial('COM9', 115200))
+
 class User:
 
     def __init__(self, name):
@@ -149,6 +165,12 @@ class User:
         print(self.numTrips)
 class Runner:
 
+    def readserial(comport, baudrate):
+        ser = serial.Serial(comport, baudrate, timeout=0.1)         # 1/timeout is the frequency at which the port is read
+        while True:
+            data = ser.readline().decode().strip()
+            if data:
+                return data
     @staticmethod
     def main():
         michael = TripScore("Michael")
