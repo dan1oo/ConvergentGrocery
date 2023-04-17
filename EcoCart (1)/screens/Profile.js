@@ -18,11 +18,6 @@ const Profile = () => {
         <Image
           style={[styles.shoppingCartIcon, styles.iconLayout]}
           resizeMode="cover"
-          source={require("../assets/shopping-cart.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
           source={require("../assets/barcode-scanner.png")}
         />
         <Image
@@ -30,11 +25,15 @@ const Profile = () => {
           resizeMode="cover"
           source={require("../assets/article.png")}
         />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/auto-awesome.png")}
-        />
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("Rewards")}>
+          <Image
+            style={[styles.shoppingCartIcon, styles.iconLayout]}
+            resizeMode="cover"
+            source={require("../assets/auto-awesome.png")}
+          />
+          
+        </Pressable>
       </View>
       <EcoCartContainer
         productIds={{ uri: "46x48x1809583521" }}
