@@ -11,9 +11,30 @@ import { useNavigation } from "@react-navigation/native";
 import ItemContainer from "../components/ItemContainer";
 import EcoCartContainer from "../components/EcoCartContainer";
 import { Border, FontSize, FontFamily, Color, Padding } from "../GlobalStyles";
+import { useState, useEffect } from 'react';
 
 const Item = () => {
   const navigation = useNavigation();
+  // Create a new state variable to store the sustainability information
+  const [sustainabilityInfo, setSustainabilityInfo] = useState('');
+  // Fetch the sustainability information and update the state when the component mounts
+  useEffect(() => {
+  const fetchSustainabilityInfo = async (item_name) => {
+  const response = await fetch("http://your-api-url/get_sustainability_info", {
+  method: "POST",
+  headers: {
+  "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ item_name }),
+  });
+
+  const data = await response.json();
+  setSustainabilityInfo(data.sustainability_info);
+  };
+  // Replace "your_item_name" with the actual item name you want to fetch sustainability info for
+  fetchSustainabilityInfo("milk");
+  }, []);
+  
 
   return (
     <View style={styles.item}>
