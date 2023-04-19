@@ -64,6 +64,43 @@ const TripReport = () => {
       <View style={[styles.lineView, styles.navBarPosition]} />
       <CartItems />
       <View style={[styles.navBar, styles.navBarPosition]}>
+        <Pressable 
+          style={styles.iconLayout} onPress={() => navigation.navigate("Map1")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/location-on1.png")}
+         />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("CartList")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/shopping-cart1.png")}
+          />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScannerAlternate")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/barcode-scanner.png")}
+         />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("TripReport")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/article.png")}
+          />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("Rewards")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/auto-awesome.png")}
+          />
+        </Pressable>
+      </View>
+      {/* <View style={[styles.navBar, styles.navBarPosition]}>
         <Image
           style={styles.iconLayout}
           resizeMode="cover"
@@ -88,7 +125,7 @@ const TripReport = () => {
             resizeMode="cover"
             source={require("../assets/article.png")}
           />
-        </Pressable>
+        </Pressable> */}
         <Pressable
           style={[styles.shoppingCartIcon, styles.iconLayout]}
           onPress={() => navigation.navigate("Rewards")}
@@ -100,7 +137,6 @@ const TripReport = () => {
           />
         </Pressable>
       </View>
-    </View>
   );
 };
 

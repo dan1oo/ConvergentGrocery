@@ -10,15 +10,16 @@ const Profile = () => {
   return (
     <View style={styles.profile}>
       <View style={styles.navBar}>
-        <Image
-          style={styles.iconLayout}
-          resizeMode="cover"
-          source={require("../assets/location-on1.png")}
-        />
+        <Pressable 
+          style={styles.iconLayout} onPress={() => navigation.navigate("Map1")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/location-on1.png")}
+         />
+        </Pressable>
         <Pressable 
           style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("CartList")}>
           <Image
-            style={[styles.shoppingCartIcon, styles.iconLayout]}
             resizeMode="cover"
             source={require("../assets/shopping-cart.png")}
           />
@@ -26,23 +27,20 @@ const Profile = () => {
         <Pressable 
           style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScannerAlternate")}>
           <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/barcode-scanner.png")}
-        />
+            resizeMode="cover"
+            source={require("../assets/barcode-scanner.png")}
+         />
         </Pressable>
         <Pressable 
           style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("TripReport")}>
           <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/article.png")}
+            resizeMode="cover"
+            source={require("../assets/article.png")}
           />
         </Pressable>
         <Pressable 
           style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("Rewards")}>
           <Image
-            style={[styles.shoppingCartIcon, styles.iconLayout]}
             resizeMode="cover"
             source={require("../assets/auto-awesome.png")}
           />
