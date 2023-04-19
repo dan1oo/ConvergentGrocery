@@ -1,5 +1,3 @@
-
-
 import openfoodfacts
 import openai
 import serial
