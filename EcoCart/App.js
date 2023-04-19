@@ -1,6 +1,7 @@
 const Stack = createNativeStackNavigator();
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import BarcodeScanner from "./screens/BarcodeScanner";
 import { useFonts } from "expo-font";
 import FindAStore1 from "./screens/FindAStore1";
 import FindAStore02 from "./screens/FindAStore02";
@@ -84,8 +85,8 @@ const App = () => {
               options={{ headerShown: false }}
             />
             <Stack.Screen
-              name="BarcodeScanner02"
-              component={BarcodeScanner02}
+              name="BarcodeScanner"
+              component={BarcodeScanner}
               options={{ headerShown: false }}
             />
             <Stack.Screen

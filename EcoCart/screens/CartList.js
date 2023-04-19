@@ -225,6 +225,48 @@ const CartList = () => {
         Cart Items (5)
       </Text>
       <View style={[styles.cartListChild, styles.cartPosition]} />
+      <View style={[styles.navBar, styles.navBarFlexBox]}>
+        <Pressable
+          style={styles.iconLayout}
+          onPress={() => navigation.navigate("FindAStore02")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/location-on1.png")}
+          />
+        </Pressable>
+        <Pressable
+          style={[styles.shoppingCartIcon, styles.iconLayout]}
+          onPress={() => navigation.navigate("CartList")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/shopping-cart1.png")}
+          />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScanner")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/barcode-scanner.png")}
+         />
+        </Pressable>
+        <Pressable
+          style={[styles.shoppingCartIcon, styles.iconLayout]}
+          onPress={() => navigation.navigate("TripReport")}
+        >
+          <Image resizeMode="cover" source={require("../assets/article.png")} />
+        </Pressable>
+        <Pressable
+          style={[styles.shoppingCartIcon, styles.iconLayout]}
+          onPress={() => navigation.navigate("Rewards")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/auto-awesome.png")}
+          />
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -465,6 +507,29 @@ const styles = StyleSheet.create({
     height: 866,
     overflow: "hidden",
     width: "100%",
+  },
+  iconLayout: {
+    height: 24,
+    width: 24,
+  },
+  navBar: {
+    top: 783,
+    left: 0,
+    borderStyle: "solid",
+    borderColor: "#e8e8e8",
+    borderTopWidth: 0.5,
+    borderBottomWidth: 0.5,
+    width: 390,
+    height: 64,
+    flexDirection: "row",
+    paddingHorizontal: 0,
+    paddingVertical: Padding.p_xl,
+    justifyContent: "center",
+    position: "absolute",
+    backgroundColor: Color.white,
+  },
+  shoppingCartIcon: {
+    marginLeft: 44,
   },
 });
 

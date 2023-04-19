@@ -12,37 +12,47 @@ const StoreRewards = () => {
   return (
     <View style={styles.storeRewards}>
       <View style={styles.popUp} />
-      <View style={styles.navBar}>
+      <View style={[styles.navBar, styles.navBarBorder, styles.navBarFlexBox]}>
         <Pressable
           style={styles.arrowBackLayout}
-          onPress={() => navigation.navigate("FindAStore")}
+          onPress={() => navigation.navigate("FindAStore02")}
         >
           <Image
-            style={styles.icon}
             resizeMode="cover"
-            source={require("../assets/location-on5.png")}
+            source={require("../assets/location-on1.png")}
           />
         </Pressable>
-        <Image
+        <Pressable
           style={[styles.shoppingCartIcon, styles.arrowBackLayout]}
-          resizeMode="cover"
-          source={require("../assets/shopping-cart.png")}
-        />
-        <Image
+          onPress={() => navigation.navigate("CartList")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/shopping-cart.png")}
+          />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.arrowBackLayout]} onPress={() => navigation.navigate("BarcodeScanner")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/barcode-scanner.png")}
+         />
+        </Pressable>
+        <Pressable
           style={[styles.shoppingCartIcon, styles.arrowBackLayout]}
-          resizeMode="cover"
-          source={require("../assets/barcode-scanner.png")}
-        />
-        <Image
+          onPress={() => navigation.navigate("TripReport")}
+        >
+          <Image resizeMode="cover" source={require("../assets/article2.png")} />
+        </Pressable>
+        <Pressable
           style={[styles.shoppingCartIcon, styles.arrowBackLayout]}
-          resizeMode="cover"
-          source={require("../assets/article.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.arrowBackLayout]}
-          resizeMode="cover"
-          source={require("../assets/auto-awesome1.png")}
-        />
+          onPress={() => navigation.navigate("Rewards")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/auto-awesome1.png")}
+          />
+        </Pressable>
       </View>
       <EcoCartContainer
         productIds={require("../assets/ecocart-icon5.png")}

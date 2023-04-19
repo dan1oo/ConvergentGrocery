@@ -79,7 +79,7 @@ const TripReport = () => {
           />
         </Pressable>
         <Pressable 
-          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScannerAlternate")}>
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScanner")}>
           <Image
             resizeMode="cover"
             source={require("../assets/barcode-scanner.png")}
@@ -126,7 +126,7 @@ const TripReport = () => {
             source={require("../assets/article.png")}
           />
         </Pressable> */}
-        <Pressable
+        {/* <Pressable
           style={[styles.shoppingCartIcon, styles.iconLayout]}
           onPress={() => navigation.navigate("Rewards")}
         >
@@ -135,7 +135,7 @@ const TripReport = () => {
             resizeMode="cover"
             source={require("../assets/auto-awesome.png")}
           />
-        </Pressable>
+        </Pressable> */}
       </View>
   );
 };

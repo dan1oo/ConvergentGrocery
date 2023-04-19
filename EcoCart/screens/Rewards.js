@@ -21,37 +21,47 @@ const Rewards = () => {
         propWidth2={344}
         onAccountCirclePress={() => navigation.navigate("Profile")}
       />
-      <View style={[styles.navBar, styles.navBarBorder]}>
-        <Image
-          style={styles.iconLayout}
-          resizeMode="cover"
-          source={require("../assets/location-on1.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/shopping-cart.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/barcode-scanner.png")}
-        />
+        <View style={[styles.navBar, styles.navBarBorder, styles.navBarFlexBox]}>
         <Pressable
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          onPress={() => navigation.navigate("TripHistory")}
+          style={styles.iconLayout}
+          onPress={() => navigation.navigate("FindAStore02")}
         >
           <Image
-            style={styles.icon}
             resizeMode="cover"
-            source={require("../assets/article2.png")}
+            source={require("../assets/location-on1.png")}
           />
         </Pressable>
-        <Image
+        <Pressable
           style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/auto-awesome1.png")}
-        />
+          onPress={() => navigation.navigate("CartList")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/shopping-cart.png")}
+          />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScanner")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/barcode-scanner.png")}
+         />
+        </Pressable>
+        <Pressable
+          style={[styles.shoppingCartIcon, styles.iconLayout]}
+          onPress={() => navigation.navigate("TripReport")}
+        >
+          <Image resizeMode="cover" source={require("../assets/article2.png")} />
+        </Pressable>
+        <Pressable
+          style={[styles.shoppingCartIcon, styles.iconLayout]}
+          onPress={() => navigation.navigate("Rewards")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/auto-awesome1.png")}
+          />
+        </Pressable>
       </View>
       <View style={[styles.storesGallery, styles.rewardsChildPosition]}>
         <View style={styles.row1}>

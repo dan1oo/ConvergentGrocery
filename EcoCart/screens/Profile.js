@@ -12,7 +12,7 @@ const Profile = () => {
       <View style={styles.navBar}>
         <Pressable
           style={styles.iconLayout}
-          onPress={() => navigation.navigate("Map1")}
+          onPress={() => navigation.navigate("FindAStore02")}
         >
           <Image
             resizeMode="cover"
@@ -28,14 +28,12 @@ const Profile = () => {
             source={require("../assets/shopping-cart.png")}
           />
         </Pressable>
-        <Pressable
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          onPress={() => navigation.navigate("BarcodeScanner")}
-        >
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScanner")}>
           <Image
             resizeMode="cover"
             source={require("../assets/barcode-scanner.png")}
-          />
+         />
         </Pressable>
         <Pressable
           style={[styles.shoppingCartIcon, styles.iconLayout]}
