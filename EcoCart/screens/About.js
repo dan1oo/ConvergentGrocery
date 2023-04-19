@@ -8,12 +8,9 @@ const About = () => {
   const navigation = useNavigation();
 
   return (
-    <Pressable
-      style={styles.about}
-      onPress={() => navigation.navigate("FindAStore")}
-    >
+    <View style={styles.profile}>
       <EcoCartContainer
-        productIds={require("../assets/ecocart-icon6.png")}
+        productIds={{ uri: "46x48x50285295" }}
         productDimensions={require("../assets/account-circle.png")}
         propRight="unset"
         propWidth={390}
@@ -23,6 +20,59 @@ const About = () => {
         propWidth2={344}
         onAccountCirclePress={() => navigation.navigate("Profile")}
       />
+      {/* <EcoCartContainer
+          productIds={require("../assets/ecocart-icon6.png")}
+          productDimensions={require("../assets/account-circle.png")}
+          propRight="unset"
+          propWidth={390}
+          propRight1="unset"
+          propWidth1={390}
+          propRight2="unset"
+          propWidth2={344}
+          onAccountCirclePress={() => navigation.navigate("Profile")}
+        /> */}
+      <View style={[styles.navBar, styles.navBarFlexBox]}>
+        <Pressable
+          style={styles.iconLayout}
+          onPress={() => navigation.navigate("FindAStore02")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/location-on1.png")}
+          />
+        </Pressable>
+        <Pressable
+          style={[styles.shoppingCartIcon, styles.iconLayout]}
+          onPress={() => navigation.navigate("CartList")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/shopping-cart.png")}
+          />
+        </Pressable>
+        <Pressable 
+          style={[styles.shoppingCartIcon, styles.iconLayout]} onPress={() => navigation.navigate("BarcodeScanner")}>
+          <Image
+            resizeMode="cover"
+            source={require("../assets/barcode-scanner.png")}
+         />
+        </Pressable>
+        <Pressable
+          style={[styles.shoppingCartIcon, styles.iconLayout]}
+          onPress={() => navigation.navigate("TripReport")}
+        >
+          <Image resizeMode="cover" source={require("../assets/article.png")} />
+        </Pressable>
+        <Pressable
+          style={[styles.shoppingCartIcon, styles.iconLayout]}
+          onPress={() => navigation.navigate("Rewards")}
+        >
+          <Image
+            resizeMode="cover"
+            source={require("../assets/auto-awesome.png")}
+          />
+        </Pressable>
+      </View>
       <Text style={[styles.about1, styles.about1Typo]}>About</Text>
       <View
         style={[styles.howWeCalculateYourSustaina, styles.featuresPosition]}
@@ -41,40 +91,9 @@ const About = () => {
       </View>
       <View style={[styles.features, styles.featuresPosition]}>
         <Text style={[styles.howWeCalculate, styles.about1Typo]}>Features</Text>
-        <Text style={[styles.text, styles.textTypo]}>{` 
- 
- 
- 
-`}</Text>
+        <Text style={[styles.text, styles.textTypo]}></Text>
       </View>
-      <View style={styles.navBar}>
-        <Image
-          style={styles.iconLayout}
-          resizeMode="cover"
-          source={require("../assets/location-on1.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/shopping-cart.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/barcode-scanner.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/article.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/auto-awesome.png")}
-        />
-      </View>
-    </Pressable>
+    </View>
   );
 };
 

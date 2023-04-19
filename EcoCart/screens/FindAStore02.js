@@ -23,38 +23,6 @@ const FindAStore02 = () => {
         onPress={() => navigation.navigate("StoreRewards")}
       />
       <PointsWrapper />
-      {/* <View style={[styles.navBar, styles.navBarFlexBox]}>
-        <Image
-          style={styles.iconLayout}
-          resizeMode="cover"
-          source={require("../assets/location-on.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/shopping-cart.png")}
-        />
-        <Pressable
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          onPress={() => navigation.navigate("BarcodeScanner")}
-        >
-          <Image
-            style={styles.icon}
-            resizeMode="cover"
-            source={require("../assets/barcode-scanner.png")}
-          />
-        </Pressable>
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/article.png")}
-        />
-        <Image
-          style={[styles.shoppingCartIcon, styles.iconLayout]}
-          resizeMode="cover"
-          source={require("../assets/auto-awesome.png")}
-        />
-      </View> */}
       <View style={[styles.navBar, styles.navBarFlexBox]}>
         <Pressable
           style={styles.iconLayout}

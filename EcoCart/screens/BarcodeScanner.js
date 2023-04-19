@@ -179,6 +179,7 @@ const styles = StyleSheet.create({
   maintext: {
     fontSize: 16,
     margin: 20,
+    color: '#fff',
   },
   barcodebox: {
     display: "flex",

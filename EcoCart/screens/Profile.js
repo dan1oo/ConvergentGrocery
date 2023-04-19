@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <View style={styles.profile}>
       <View style={styles.navBar}>
-        <Pressable
+        <Pressable 
           style={styles.iconLayout}
           onPress={() => navigation.navigate("FindAStore02")}
         >
@@ -63,14 +63,18 @@ const Profile = () => {
         onAccountCirclePress={() => navigation.navigate("Profile")}
       />
       <Text style={styles.averageSustainabilityScore}>
-        Average Sustainability Score
+        Average Sustainability Score 8.2/10
       </Text>
       <Image
         style={styles.profileChild}
         resizeMode="cover"
         source={require("../assets/ellipse-29.png")}
       />
-      <View style={[styles.profileItem, styles.profileLayout]} />
+      <View style={[styles.profileItem, styles.profileLayout]} >
+      <Text style={styles.accountName}>
+      Michael Tao
+      </Text>
+      </View>
       <View style={[styles.profileInner, styles.profileLayout]} />
       <View style={[styles.rectangleView, styles.profileLayout]} />
       <View style={styles.frameView} />
@@ -134,7 +138,7 @@ const styles = StyleSheet.create({
     top: 168,
     width: 158,
     left: 151,
-    height: 14,
+    height: 18,
     backgroundColor: Color.gainsboro_300,
   },
   rectangleView: {
