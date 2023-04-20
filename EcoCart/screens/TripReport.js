@@ -8,7 +8,7 @@ import EcoCartContainer from "../components/EcoCartContainer";
 import CartItems from "../components/CartItems";
 import { Color, FontFamily, FontSize, Border, Padding } from "../GlobalStyles";
 
-const TripReport = () => {
+const TripReport = (score) => {
   const navigation = useNavigation();
 
   return (

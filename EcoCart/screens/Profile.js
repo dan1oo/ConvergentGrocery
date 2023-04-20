@@ -68,11 +68,11 @@ const Profile = () => {
       <Image
         style={styles.profileChild}
         resizeMode="cover"
-        source={require("../assets/ellipse-29.png")}
+        source={require("../assets/ahmad-modified.png")}
       />
       <View style={[styles.profileItem, styles.profileLayout]} >
       <Text style={styles.accountName}>
-      Michael Tao
+      Ahmad Hadidi
       </Text>
       </View>
       <View style={[styles.profileInner, styles.profileLayout]} />
