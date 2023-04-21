@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, View, Image, Text, Pressable } from "react-native";
+import { StyleSheet, View, Image, Text, Pressable, ScrollView } from "react-native";
 import { ProgressBar as RNPProgressBar } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import PointsContainer from "../components/PointsContainer";
@@ -12,7 +12,7 @@ const TripReport = (score) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.tripReport}>
+    <ScrollView style={styles.tripReport}>
       <View style={[styles.tripReportChild, styles.vectorIconPosition]} />
       <View style={styles.section} />
       <PointsContainer />
@@ -136,7 +136,7 @@ const TripReport = (score) => {
             source={require("../assets/auto-awesome.png")}
           />
         </Pressable> */}
-      </View>
+      </ScrollView>
   );
 };
 
