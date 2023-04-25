@@ -12,7 +12,7 @@ const TripReport = (score) => {
   const navigation = useNavigation();
 
   return (
-    <ScrollView style={styles.tripReport}>
+    <View style={styles.tripReport}>
       <View style={[styles.tripReportChild, styles.vectorIconPosition]} />
       <View style={styles.section} />
       <PointsContainer />
@@ -136,7 +136,7 @@ const TripReport = (score) => {
             source={require("../assets/auto-awesome.png")}
           />
         </Pressable> */}
-      </ScrollView>
+      </View>
   );
 };
 
