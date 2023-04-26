@@ -1,7 +1,6 @@
 # ConvergentGrocery - Sustainable shopping at your fingertips!
 
-To get the app to run, <br>
-Run the following commands : <br>
+To get the app to run, run the following commands : <br>
 pip install serial<br>
 pip install openai <br>
 pip install openfoodfacts <br>
