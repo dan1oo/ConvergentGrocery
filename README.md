@@ -1,11 +1,17 @@
-# ConvergentGrocery
+# ConvergentGrocery - Sustainable shopping at your fingertips!
 
-### Ahmad Hadidi
+To get the app to run, run the following commands : <br>
+pip install serial<br>
+pip install openai <br>
+pip install openfoodfacts <br>
 
-# Daniel Wang
+npx expo install <br>
+npx expo install react-native-circular-progress-indicator <br>
+npx expo install react-native-svg <br> <br>
 
-# Michael Tao
 
-###### Rishi Natarajan
+on line 31 in barcodescanner.js, replace the IP address with your IP address to test locally. <br>
+To find your IP address on Mac, run "ipconfig getifaddr en0" <br>
+To find your IP address on Windows, run  "ipconfig" <br>
 
-# Moksh Nirvaan
+
