@@ -1,5 +1,7 @@
 # ConvergentGrocery - Sustainable shopping at your fingertips!
 
+Won the "Best Design" award at Convergent Spring 2023 Demo Day
+
 To get the app to run, run the following commands : <br>
 pip install serial<br>
 pip install openai <br>
